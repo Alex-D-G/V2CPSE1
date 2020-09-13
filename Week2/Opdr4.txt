@@ -15,8 +15,8 @@ public:
    void play( const note & n ){
       std::cout << n.frequency << "\n";
       std::cout << n.duration << "\n";
-      std::string freq = "00";
-      std::string dur = "00";
+      std::string freq = "";
+      std::string dur = "";
 
       if(n.duration == note::dF){
          freq = "dF";
@@ -77,6 +77,14 @@ public:
       else if(n.frequency == 987){
          dur = "B5";
       }
+
+      if(dur == ""){
+         dur = std::to_string(n.frequency);
+      }
+      if(freq == ""){
+         freq = std::to_string(n.duration);
+      }
+
       myfile << "    p.play( note{ note::" << dur << ",  note::" << freq << " } ); \n";
    }
 };
@@ -99,10 +107,10 @@ int main( void ){
       fe.play( p );
    }  
    
-   if( 1 ){ rtttl_play( p, sos ); }   
+   if( 0 ){ rtttl_play( p, sos ); }   
    if( 0 ){ rtttl_play( p, let_it_be );  }
    if( 0 ){ rtttl_play( p, muppets );  }
-   if( 0 ){ rtttl_play( p, rickroll );  }
+   if( 1 ){ rtttl_play( p, rickroll );  }
    if( 0 ){ rtttl_play( p, one );  }
 
    myfile << "}" << "\n"; 
