@@ -19,63 +19,63 @@ public:
       std::string dur = "";
 
       if(n.duration == note::dF){
-         freq = "dF";
+         freq = "note::dF";
 
       }
       else if(n.duration == 500000){
-         freq = "dH";
+         freq = "note::dH";
       }
       else if(n.duration == 250000){
-         freq = "dQ";
+         freq = "note::dQ";
       }
 
       if(n.frequency == 440){
-         dur = "A4";
+         dur = "note::A4";
       }
       else if(n.frequency == 466){
-         dur = "A4s";
+         dur = "note::A4s";
       }
       else if(n.frequency == 494){
-         dur = "B4";
+         dur = "note::B4";
       }
       else if(n.frequency == 523){
-         dur = "C5";
+         dur = "note::C5";
       }
       else if(n.frequency == 554){
-         dur = "C5s";
+         dur = "note::C5s";
       }
       else if(n.frequency == 587){
-         dur = "D5";
+         dur = "note::D5";
       }
       else if(n.frequency == 622){
-         dur = "D5s";
+         dur = "note::D5s";
       }
       else if(n.frequency == 659){
-         dur = "E5";
+         dur = "note::E5";
       }
       else if(n.frequency == 698){
-         dur = "F5";
+         dur = "note::F5";
       }
       else if(n.frequency == 740){
-         dur = "F5s";
+         dur = "note::F5s";
       }
       else if(n.frequency == 740){
-         dur = "F5s";
+         dur = "note::F5s";
       }
       else if(n.frequency == 784){
-         dur = "G5";
+         dur = "note::G5";
       }
       else if(n.frequency == 830){
-         dur = "G5s";
+         dur = "note::G5s";
       }
       else if(n.frequency == 880){
-         dur = "A5";
+         dur = "note::A5";
       }
       else if(n.frequency == 932){
-         dur = "A5s";
+         dur = "note::A5s";
       }
       else if(n.frequency == 987){
-         dur = "B5";
+         dur = "note::B5";
       }
 
       if(dur == ""){
@@ -85,7 +85,7 @@ public:
          freq = std::to_string(n.duration);
       }
 
-      myfile << "    p.play( note{ note::" << dur << ",  note::" << freq << " } ); \n";
+      myfile << "    p.play( note{ " << dur << ",  " << freq << " } ); \n";
    }
 };
 
