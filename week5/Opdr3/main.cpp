@@ -50,6 +50,32 @@ TEST_CASE( "contains" ){
    REQUIRE( array.contains(4) == true );  
 }
 
+TEST_CASE( "type 1" ){
+   std::stringstream s;
+   my_array< float, 3 > array;
+   array.add(4.5);
+   array.add(2.3);
+   array.add(6.5);
+
+   s << array;
+
+   REQUIRE( s.str() == "{4.5,2.3,6.5}" );   
+}
+
+TEST_CASE( "type 2" ){
+   std::stringstream s;
+   my_array< char, 5 > array;
+   array.add('a');
+   array.add('b');
+   array.add('c');
+   array.add('b');
+   array.add('a');
+
+   s << array;
+
+   REQUIRE( s.str() == "{a,b,c}" );   
+}
+
 TEST_CASE( "max" ){
    my_array< int, 10 > array;
    array.add(1);
